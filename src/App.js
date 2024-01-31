@@ -8,7 +8,7 @@ import { getTokenFromUrl } from "./spotify";
 
 const s = new SpotifyWebApi();
 function App() {
-  const [ { token } , dispatch] = useDataLayerValue();
+  const [{ token }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -21,17 +21,19 @@ function App() {
         type: "SET_TOKEN",
         token: _token,
       });
+      s.getMe().then((user) => {
+        dispatch({
+          type: "SET_USER",
+          user,
+        });
+      });
     }
-  }, []);
+  }, [token, dispatch]);
 
+  // console.log("User", user);
   console.log("Token", token);
 
-  return (
-    <>
-      {token ? <Player /> : <Login />}
-    </>
-  );
+  return <>{token ? <Player /> : <Login />}</>;
 }
 
 export default App;
-

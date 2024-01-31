@@ -10,11 +10,9 @@ export const DataLayer = ({ initialState, reducer, children }) => (
 
 export const useDataLayerValue = () => useContext(DataContext);
 
-// -----------
+// ----------------------------------------------------------
 // reducer.jsx
-
 export const initialState = {
-
   user: null,
   playlists: [],
   playing: false,
@@ -30,6 +28,8 @@ export const  reducerLayer = (state, action) => {
   switch (action.type) {
     case "SET_USER":       
       return { ...state, user: action.user, };
+    case "SET_TOKEN":
+      return { ...state, token: action.token, };
     default:
       return state;
   }
