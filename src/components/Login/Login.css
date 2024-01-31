@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.login {
+  background: black;
+  color: white;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.login img {
+  height: 200px;
+}
+
+.login > a {
+  --padding-border: 30px;
+  background-color: #3b9f3f;
+  border-radius: var(--padding-border);
+  padding: 15px var(--padding-border);
+  cursor: pointer;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+.login > a:hover {
+  background-color: #187f1c;
+}
