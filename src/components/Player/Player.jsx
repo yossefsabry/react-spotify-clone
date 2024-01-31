@@ -1,11 +1,19 @@
-import { useDataLayerValue } from "../DataLayer/DataLayer";
+import Body from "../Body/Body";
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
 import "./Player.css";
 
 const Player = () => {
-  const [ {user} ] = useDataLayerValue();
-  console.log("----------------", user);
   return (
-    <div>welcome form the welcome page</div>
+    <div className="player-contaienr">
+      <div className="content-container">
+        <Navbar />
+        <Body />
+      </div>
+      <div className="player-song">
+        <Footer />
+      </div>
+    </div>
   );
 };
 
