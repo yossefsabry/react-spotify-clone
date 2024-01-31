@@ -1,0 +1,143 @@
+.footer__player {
+  width: 100%;
+  height: 94px;
+  background-color: #282828;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__player .footer__left {
+  flex: 0.3;
+  color: white;
+  display: flex;
+  align-items: center;
+  max-width: 300px;
+  gap: 20px;
+  padding: 10px 10px;
+}
+
+.footer__left img {
+  width: 100%;
+  width: 60px;
+}
+
+.footer__left .icon__footer {
+  font-size: 1.5rem;
+  color: #b3b3b3;
+  cursor: pointer;
+}
+
+.footer__player .footer__center {
+  flex: 0.4;
+  color: white;
+  padding: 10px 20px;
+  flex-grow: 1;
+  padding: 0 calc(3.5vw + 5px);
+}
+
+.footer__center .footer__contorls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 5px calc(8.5vw + 5px);
+}
+
+.footer__center .footer__contorls * {
+  color: #b3b3b3;
+  cursor: pointer;
+  font-size: 1.9rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.footer__center .footer__contorls *:hover {
+  color: white;
+}
+
+.player__slider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.player__slider .slider {
+  width: 100%;
+  border-radius: 5px;
+  height: 4px;
+  position: relative;
+  background-color: #535353;
+  &::after {
+    content: '';
+    width: 60%;
+    height: 4px;
+    background-color: white;
+    border-radius: 5px;
+    position: absolute;
+  }
+}
+
+.footer__player {
+  flex: 0.3;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  justify-content: space-between;
+  flex: 0.3;
+}
+
+.footer__right {
+  flex: 0.3;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 20px;
+  justify-content: center;
+  flex: 0.3;
+  flex-wrap: wrap;
+}
+
+.footer__right__left {
+  display: flex;
+}
+
+.footer__right .slider {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer__right .slider .slider__track {
+  width: 100%;
+  height: 4px;
+  background-color: #535353;
+  max-width: 130px;
+  position: relative;
+  &::after {
+    content: '';
+    width: 60%;
+    height: 4px;
+    background-color: #529954;
+    border-radius: 5px;
+    position: absolute;
+  }
+}
+
+.footer__right .icon__footer {
+  font-size: 1.5rem;
+  color: #b3b3b3;
+  cursor: pointer;
+  margin: 0 3px;
+  font-weight: 100;
+  transition: all 0.2s ease-in-out;
+}
+.footer__right .icon__footer:hover {
+  color: white;
+}

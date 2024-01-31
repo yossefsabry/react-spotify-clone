@@ -15,23 +15,30 @@ function App() {
     window.location.hash = ""; // make the url empty for security
     let _token = hash.access_token;
     if (_token) {
+
       s.setAccessToken(_token);
-      console.log(_token);
+
       dispatch({
         type: "SET_TOKEN",
         token: _token,
       });
+
       s.getMe().then((user) => {
         dispatch({
           type: "SET_USER",
           user,
         });
       });
+
+      s.getUserPlaylists().then((playlists) => {
+        dispatch({
+          type: "SET_PLAYLISTS",
+          playlists: playlists,
+        });
+      });
+
     }
   }, [token, dispatch]);
-
-  // console.log("User", user);
-  console.log("Token", token);
 
   return <>{token ? <Player /> : <Login />}</>;
 }

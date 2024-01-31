@@ -1,0 +1,28 @@
+.navbar__container {
+  height: calc(100vh - 94px);
+  background-color: #040404;
+  color: white;
+  padding: 10px 30px;
+  position: relative;
+  overflow-y: overlay;
+  flex: 0.2;
+  min-width: 230px;
+}
+.navbar__container::-webkit-scrollbar {
+  display: none;
+}
+
+.navbar__container .image__container {
+  width: 100%;
+}
+
+.navbar__container .image__container img {
+  width: 100%;
+  max-width: 200px;
+}
+
+.playlist__container .playlist__title {
+  font-weight: 100;
+  border-bottom: 1px solid #777;
+  padding: 10px 20px;
+}
