@@ -12,7 +12,7 @@ function App() {
 
   useEffect(() => {
     const hash = getTokenFromUrl();
-    window.location.hash = ""; // make the url empty for security
+    // window.location.hash = ""; // make the url empty for security
     let _token = hash.access_token;
     if (_token) {
 
@@ -21,6 +21,10 @@ function App() {
       dispatch({
         type: "SET_TOKEN",
         token: _token,
+      });
+      dispatch({
+        type: "SET_SPOTIFY",
+        spotify: s,
       });
 
       s.getMe().then((user) => {
@@ -37,7 +41,14 @@ function App() {
         });
       });
 
-    }
+      s.getPlaylist("37i9dQZEVXcJNY5yF2p7ZE").then((response) => {
+        dispatch({
+          type: "SET_DISCOVER_WEEKLY",
+          discover_weekly: response,
+        });
+      });
+    };
+
   }, [token, dispatch]);
 
   return <>{token ? <Player /> : <Login />}</>;
