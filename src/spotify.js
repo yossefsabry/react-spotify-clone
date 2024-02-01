@@ -1,7 +1,10 @@
 // https://developer.spotify.com/documentation/web-playback-sdk/quick-start/#
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 const clientId = "a684d74fd9ae43b8965fe3d496acbd4d";
-const redirectUri = "http://localhost:3000/";
+
+const redirectUri = "https://react-spotify-clone-weld.vercel.app/";
+// const redirectUriLocal = "http://localhost:3000/";
+
 const scopes = [
   "user-read-currently-playing",
   "user-read-recently-played",
