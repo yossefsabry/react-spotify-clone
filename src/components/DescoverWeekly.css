@@ -1,13 +1,30 @@
+.discover__weekly > * {
+  padding: 0px 20px;
+}
 .discover__weekly__album {
-  margin: 20px 0;
   display: flex;
   align-items: start;
   color: #fff;
   cursor: pointer;
   gap: 20px;
   height: 100%;
+  background: linear-gradient(transparent, #27302a);
 }
 
+/* rest the container */
+.discover__weekly__songs  {
+  padding: 0;
+}
+.discover__weekly__icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+  padding: 50px 30px;
+  background: linear-gradient( #27302a, transparent);
+  cursor: pointer;
+}
 .discover__weekly__album img {
   height: calc(100px + 10vw);
   width: calc(100px + 10vw);
@@ -18,6 +35,10 @@
   font-size: 16px;
   margin: 10px;
   text-align: left;
+}
+.discover__weekly__icons > * {
+  font-weight: bold;
+  transform: scale(1.9);
 }
 
 .songRow {

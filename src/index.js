@@ -4,14 +4,18 @@ import './index.css';
 import App from './App';
 import { DataLayer, initialState, reducerLayer } from './components/DataLayer/DataLayer';
 // import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <DataLayer initialState={initialState} reducer={reducerLayer}>
-      <App />
-    </DataLayer>
-  </React.StrictMode>
+   <React.StrictMode>
+      <DataLayer initialState={initialState} reducer={reducerLayer}>
+         <BrowserRouter>
+            <App />
+         </BrowserRouter>
+      </DataLayer>
+   </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

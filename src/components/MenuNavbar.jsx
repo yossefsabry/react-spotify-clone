@@ -1,11 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const MenuNavbar = (props) => {
 
   const style__menu = {
     display: "flex",
     alignItems: "center",
-    gap: "20px",
+    gap: "0px 10px",
     color: "white",
     padding: "12px 0",
     transititon: "200ms ease-in-out",
@@ -13,10 +14,10 @@ const MenuNavbar = (props) => {
   };
 
   return (
-    <a style={style__menu}>
+    <Link style={style__menu} to={props.url}>
       <span style={{fontWeight: "100"}}>{props.icon}</span>
       <p>{props.name}</p>{" "}
-    </a>
+    </Link>
   );
 };
 

@@ -1,14 +1,21 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDataLayerValue } from './DataLayer/DataLayer'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
-const Header = () => {
+const Header = (props) => {
   const styleHeader = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     color: 'white',
-  }
+    position: 'sticky',
+    width: "100%",
+    zIndex: '4',
+    left: "0px",
+    top: "0",
+    padding: "25px 5px 25px 15px",
+    background: props.scroll_state ? "linear-gradient( #27302a, #121212)" : "none",
+  };
   const styleInputHeader = {
     color: 'white',
     backgroundColor: '#282828',
@@ -33,10 +40,15 @@ const Header = () => {
     borderRadius: '50%',
     marginRight: '10px',
   }
+
   const [{ user }] = useDataLayerValue();
-  // console.log(user);
+
+  const handleScroll = () => {
+    console.log("welcome");
+  }
+  // handle scroll
   return (
-    <div className='header__body' style={styleHeader}>
+    <div className='header__body' style={styleHeader} onScrollCapture={handleScroll} >
       <div className='header__left'>
         <input
           placeholder='Search for Artists, Songs, or Podcasts'
@@ -53,4 +65,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

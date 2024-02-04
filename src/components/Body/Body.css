@@ -1,14 +1,16 @@
 .body__container {
-  padding: 30px;
-  height: calc(100vh - 94px);
-  /* width: 100%; */
+  /* padding: 30px; */
+  height: calc(100vh - var(--footer-height));
+  width: 100%;
   color: white;
-  background: linear-gradient(transparent, rgba(0, 0, 0, 1));
+  /* background: linear-gradient(transparent, #27302a); */
   background-color: rgb(91, 87, 115);
-  flex: .8;
+  flex: 0.8;
   overflow-y: overlay;
+  background-color: #121212;
+  margin: 10px;
+  border-radius: 20px;
 }
 .body__container::-webkit-scrollbar {
   display: none;
 }
-

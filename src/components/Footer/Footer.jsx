@@ -43,7 +43,7 @@ const Footer = () => {
       </div>
       <div className="footer__right">
           <div className="footer__right__left">
-            <FavoriteIcon className="icon__footer" style={{color: "#529954"}}/>
+            <FavoriteIcon className="icon__footer" style={{color: "var(--color-green)"}}/>
             <DevicesIcon className="icon__footer" />
             <GraphicEqIcon className="icon__footer" />
           </div>

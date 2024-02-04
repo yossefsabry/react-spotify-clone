@@ -1,14 +1,27 @@
 .navbar__container {
-  height: calc(100vh - 94px);
-  background-color: #040404;
+  height: calc(100vh - var(--footer-height) );
   color: white;
-  padding: 10px 30px;
   position: relative;
-  overflow-y: overlay;
+  /* overflow-y: overlay; */
   flex: 0.2;
   min-width: 230px;
+  margin: 10px ;
 }
-.navbar__container::-webkit-scrollbar {
+.navbar__container > * {
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: #27302a;
+}
+.navbar__container .menu__navbar__container {
+  height: 15%;
+}
+
+.navbar__container .playlist__container{
+  height: 85%;
+  overflow-y: overlay;
+}
+
+.navbar__container .playlist__container::-webkit-scrollbar {
   display: none;
 }
 
@@ -21,8 +34,7 @@
   max-width: 200px;
 }
 
-.playlist__container .playlist__title {
+.playlist__container .Title__playlist {
   font-weight: 100;
   border-bottom: 1px solid #777;
-  padding: 10px 20px;
 }

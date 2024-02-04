@@ -5,33 +5,30 @@ import SearchIcon from "@mui/icons-material/Search";
 import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import MenuNavbar from "../MenuNavbar";
 import { useDataLayerValue } from "../DataLayer/DataLayer";
+import RecommendIcon from "@mui/icons-material/Recommend";
 
 const Navbar = () => {
-
-  const [ { playlists } ] = useDataLayerValue();
+  const [{ playlists }] = useDataLayerValue();
 
   return (
     <div className="navbar__container">
-      <div className="image__container">
-        <img
-          src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
-          alt="spotify-logo"
-        />
-      </div>
-      <div className="menu__navbar__container">
-        <MenuNavbar icon={<AddHomeWorkIcon />} name="Home" />
+      <div className="menu__navbar__container" style={{ marginBottom: "10px" }}>
+        <MenuNavbar icon={<AddHomeWorkIcon />} name="Home" url="/" />
         <MenuNavbar icon={<SearchIcon />} name="Search" />
-        <MenuNavbar icon={<VideoLibraryIcon />} name="Your Library" />
       </div>
       <div className="playlist__container">
-        <p className="playlist__title">playlists</p>
-
+        <div className="Title__playlist">
+          <MenuNavbar icon={<VideoLibraryIcon />} name="Your Library" />
+        </div>
+        <div className="pages__title" > 
+          <MenuNavbar icon={<RecommendIcon />} name="Recommend List" url="/recommend"/>
+        </div>
         <div className="playlist__content__container">
-          {playlists? (
-            playlists?.body?.items?.map((playlist) => (
+          {playlists
+            ? playlists?.body?.items?.map((playlist) => (
               <MenuNavbar key={playlist.id} name={playlist.name} />
             ))
-          ): ("no playlists")}
+            : "no playlists"}
         </div>
       </div>
     </div>
