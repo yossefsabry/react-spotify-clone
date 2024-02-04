@@ -1,0 +1,113 @@
+.body__element > * {
+  padding: 0px 20px;
+}
+.body__element__album {
+  display: flex;
+  align-items: start;
+  color: #fff;
+  cursor: pointer;
+  gap: 20px;
+  height: 100%;
+  background: linear-gradient(transparent, var(--dark-green));
+}
+
+/* rest the container */
+.body__element__songs {
+  padding: 0;
+}
+.body__element__icons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+  padding: 50px 30px;
+  background: linear-gradient(var(--dark-green), transparent);
+  cursor: pointer;
+}
+.body__element__album img {
+  height: calc(100px + 10vw);
+  width: calc(100px + 10vw);
+  object-fit: contain;
+}
+
+.body__element__album p {
+  font-size: 16px;
+  margin: 10px;
+  text-align: left;
+}
+.body__element__icons > * {
+  font-weight: bold;
+  transform: scale(1.9);
+}
+
+.songRow {
+  padding: 20px 30px;
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  color: white;
+}
+
+.songRow:hover {
+  cursor: pointer;
+  background-color: #332e2e;
+  opacity: 0.8;
+}
+
+.songRow__info {
+  margin-left: 20px;
+}
+
+.songRow__info > h1 {
+  font-size: 16px;
+}
+
+.songRow__info > p {
+  font-size: 14px;
+  margin-top: 3px;
+  color: gray;
+}
+
+.songRow__album {
+  height: 40px;
+  width: 40px;
+}
+/*------------------------------------*/
+.container__recommend__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+.container__recommend__list .recommand__cards__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+}
+.recommand__cards__wrapper .card__recommend {
+  width: 300px !important;
+  background: var(--dark-green);
+  padding: 20px;
+  border-radius: 20px;
+  height: 450px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all .3s;
+}
+.recommand__cards__wrapper .card__recommend:hover { 
+  background: var(--gray-bg);
+}
+.container__recommend__list .recommand__cards__wrapper .card__recommend img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 12px;
+}

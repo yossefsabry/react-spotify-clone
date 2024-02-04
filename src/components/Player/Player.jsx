@@ -1,20 +1,27 @@
-import Body from "../Body/Body";
+import Body, { BodyTwo } from "../Body/Body";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import "./Player.css";
 import { Routes, Route } from "react-router-dom";
+import { useDataLayerValue } from "../DataLayer/DataLayer";
 
 const Player = () => {
+
+  const [{discover_weekly, recommend_list}] = useDataLayerValue(); 
+  // console.log(recommend_list);
   return (
-    <div className="player-contaienr" style={{background: "black"}}>
+    <div className="player-contaienr" style={{ background: "black" }}>
       <div className="content-container">
         <Navbar />
         <Routes>
-          <Route path="/" element={<Body />} />
-          <Route path="/recommend" element={<h1>welcome </h1>} />
+          <>
+            <Route path="/" element={<Body name="Discover Weekly" type={discover_weekly}/>} />
+            {/* <Route path="/recommend" element={<Body name="Recommend List" type={recommend_list}/>} /> */}
+            <Route path="/recommend" element={<BodyTwo name="Recommend List" type={recommend_list} />}/>
+          </>
         </Routes>
       </div>
-      <div className="player-song" style={{background: "black"}}>
+      <div className="player-song" style={{ background: "black" }}>
         <Footer />
       </div>
     </div>

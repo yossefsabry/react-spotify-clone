@@ -1,23 +1,23 @@
 .navbar__container {
-  height: calc(100vh - var(--footer-height) );
+  height: calc(100vh - var(--footer-height));
+  position: relative;
   color: white;
   position: relative;
-  /* overflow-y: overlay; */
   flex: 0.2;
-  min-width: 230px;
-  margin: 10px ;
+  min-width: 380px;
+  margin: 10px 0px;
 }
 .navbar__container > * {
   padding: 10px 20px;
   border-radius: 20px;
-  background-color: #27302a;
+  background-color: var(--dark-green);
 }
 .navbar__container .menu__navbar__container {
   height: 15%;
 }
 
-.navbar__container .playlist__container{
-  height: 85%;
+.navbar__container .playlist__container {
+  height: 84%;
   overflow-y: overlay;
 }
 
@@ -34,7 +34,21 @@
   max-width: 200px;
 }
 
-.playlist__container .Title__playlist {
+.playlist__container .title__playlist {
   font-weight: 100;
+  position: sticky;
+  top: 0;
   border-bottom: 1px solid #777;
+  left: 0;
+  z-index: 4;
+  background: var(--dark-green);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px
+}
+.playlist__container .title__playlist .icon__title > *{
+  font-size: 31px;
+  margin-left: 10px;
+  cursor: pointer;
 }

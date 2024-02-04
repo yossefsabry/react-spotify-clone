@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Login from "./components/Login/Login";
 import Player from "./components/Player/Player";
@@ -46,18 +46,24 @@ function App() {
           discover_weekly: response,
         });
       });
-      // s.getRecommendations({ min_energy: 0.4, seed_artists: ['2N72bJ8IYB4KZmKmxz5Xkk', '4DYFVNKZ1uixa6SQTvzQwJ'], min_popularity: 50 }).then((recommend_list) => {
-      //    dispatch({
-      //       type: "GET_RECOMMEND",
-      //       recommend_list: recommend_list,
-      //    });
-      // });
+      dispatch({
+        type: "SET_LOADING",
+        loading: false,
+      });
+
+      s.getRecommendations({ min_energy: 0.4, seed_artists: ['2N72bJ8IYB4KZmKmxz5Xkk', '4DYFVNKZ1uixa6SQTvzQwJ'], min_popularity: 50 }).then((recommend_list) => {
+         dispatch({
+            type: "GET_RECOMMEND",
+            recommend_list: recommend_list,
+         });
+      });
+      
     }
   }, [token, dispatch]);
 
    return(
       <>
-         {token ? <Player /> : <Login />}
+          {token ? <Player /> : <Login /> }
       </>
    )
 }

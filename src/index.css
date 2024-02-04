@@ -7,6 +7,11 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+html {
+  line-height: 1.6;
+  font-size: 1.125rem;
+  letter-spacing: 1.5px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

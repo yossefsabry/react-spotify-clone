@@ -1,5 +1,7 @@
 :root {
-  --footer-height: 110px;
+  --footer-height: 120px;
   --color-green: rgb(76 167 79);
+  --gray-bg: #121212;
+  --dark-green: #27302a;
 }
 

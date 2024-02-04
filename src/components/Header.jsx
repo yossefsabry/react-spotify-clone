@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import { useDataLayerValue } from './DataLayer/DataLayer'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
@@ -14,7 +13,8 @@ const Header = (props) => {
     left: "0px",
     top: "0",
     padding: "25px 5px 25px 15px",
-    background: props.scroll_state ? "linear-gradient( #27302a, #121212)" : "none",
+    transition: "all .3s", // not working for the change of the bg in header
+    background: props.scroll_state ? "linear-gradient( var(--dark-green), var(--gray-bg))" : "none",
   };
   const styleInputHeader = {
     color: 'white',

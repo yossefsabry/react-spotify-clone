@@ -13,23 +13,22 @@ export const useDataLayerValue = () => useContext(DataContext);
 // ----------------------------------------------------------
 // reducer.jsx
 export const initialState = {
-   user: null,
-   playlists: [],
-   playing: false,
-   item: null,
-   token: null,
-   discover_weekly: null,
-   top_artists: null,
-   spotify: null,
-   recommend_list: null,
+  user: null,
+  playlists: [],
+  playing: false,
+  item: null,
+  token: null,
+  discover_weekly: null,
+  top_artists: null,
+  spotify: null,
+  recommend_list: null,
 };
 
 export const reducerLayer = (state, action) => {
-  console.log(action);
+  // console.log(action);
   switch (action.type) {
     case "SET_USER":
       return { ...state, user: action.user };
-
     case "SET_TOKEN":
       return { ...state, token: action.token };
 

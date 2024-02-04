@@ -6,6 +6,8 @@ import VideoLibraryIcon from "@mui/icons-material/VideoLibrary";
 import MenuNavbar from "../MenuNavbar";
 import { useDataLayerValue } from "../DataLayer/DataLayer";
 import RecommendIcon from "@mui/icons-material/Recommend";
+import AddIcon from '@mui/icons-material/Add';
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Navbar = () => {
   const [{ playlists }] = useDataLayerValue();
@@ -17,8 +19,12 @@ const Navbar = () => {
         <MenuNavbar icon={<SearchIcon />} name="Search" />
       </div>
       <div className="playlist__container">
-        <div className="Title__playlist">
+        <div className="title__playlist">
           <MenuNavbar icon={<VideoLibraryIcon />} name="Your Library" />
+          <div className="icon__title" >
+            <AddIcon />
+            <ArrowForwardIcon />
+          </div>
         </div>
         <div className="pages__title" > 
           <MenuNavbar icon={<RecommendIcon />} name="Recommend List" url="/recommend"/>
