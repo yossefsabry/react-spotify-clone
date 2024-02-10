@@ -1,3 +1,4 @@
+
 .navbar__container {
   height: calc(100vh - var(--footer-height));
   position: relative;
@@ -37,15 +38,15 @@
 .playlist__container .title__playlist {
   font-weight: 100;
   position: sticky;
-  top: 0;
+  top: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   border-bottom: 1px solid #777;
   left: 0;
   z-index: 4;
   background: var(--dark-green);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px
 }
 .playlist__container .title__playlist .icon__title > *{
   font-size: 31px;
