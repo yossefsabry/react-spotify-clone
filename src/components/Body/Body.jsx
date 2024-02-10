@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import BodyComponent, { BodyComponentTwo } from '../BodyComponent'
+import CopyWrite from '../CopyWrite/CopyWrite'
 import Header from '../Header'
 import './Body.css'
 
@@ -33,6 +34,7 @@ const Body = (props) => {
     <div className="body__container" ref={scrollContainerRef}>
       <Header scroll_state={scrollState} />
       <BodyComponent type={props.type} name={props.name}/>
+      <CopyWrite />
     </div>
   )
 }
@@ -70,6 +72,7 @@ export const BodyTwo = (props) => {
     <div className="body__container" ref={scrollContainerRef}>
       <Header scroll_state={scrollState} />
       <BodyComponentTwo type={props.type} name={props.name}/>
+      <CopyWrite />
     </div>
   )
 }
