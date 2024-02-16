@@ -1,5 +1,7 @@
 import React from "react";
 import "./BodyComponent.css";
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 const SongRow = ({ track, number }) => {
   return (
@@ -12,6 +14,10 @@ const SongRow = ({ track, number }) => {
           {track.artists.map((artist) => artist.name).join(", ")} -{" "}
           {track.album.name}
         </p>
+      </div>
+      <div className="row__icons">
+        <FavoriteIcon className="icon__love" fontSize="large"/>
+        <MoreHorizIcon fontSize="large"/>
       </div>
     </div>
   );

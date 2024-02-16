@@ -73,6 +73,24 @@
   height: 40px;
   width: 40px;
 }
+.row__icons {
+  width: 100%;
+  text-align: end;
+  flex: 1;
+}
+.row__icons > * {
+  cursor: pointer;
+  padding: 5px;
+}
+
+.row__icons .icon__love {
+  margin-inline: 5px;
+  color: var(--color-green);
+  transition: all .3s;
+}
+.row__icons .icon__love:hover {
+  color: #bc1a1a;
+}
 /*------------------------------------*/
 .container__recommend__list {
   display: flex;

@@ -26,6 +26,7 @@ export const initialState = {
   playlist_id: null,
   playlist_info: null,
   loading: false,
+  top_tracks: null,
 };
 
 export const reducerLayer = (state, action) => {
@@ -60,6 +61,10 @@ export const reducerLayer = (state, action) => {
 
     case "SET_INFO_PLAYLIST":
       return { ...state, playlist_info: action.playlist_info };
+
+    case "TOP_TRACKS":
+      return { ...state, top_tracks: action.top_tracks };
+
 
     default:
       return state;
