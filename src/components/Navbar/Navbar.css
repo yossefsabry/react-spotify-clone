@@ -6,10 +6,10 @@
   position: relative;
   flex: 0.2;
   min-width: 380px;
+  width: 480px;
   margin: 10px 0px;
 }
 .navbar__container > * {
-  padding: 10px 20px;
   border-radius: 20px;
   background-color: var(--dark-green);
 }
@@ -50,6 +50,6 @@
 }
 .playlist__container .title__playlist .icon__title > *{
   font-size: 31px;
-  margin-left: 10px;
   cursor: pointer;
+  margin-inline: 8px;
 }

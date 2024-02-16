@@ -11,11 +11,11 @@ const MenuNavbar = (props) => {
     alignItems: "center",
     gap: "0px 10px",
     color: "white",
-    padding: `${props.imagePlaylist ? "6px 0px" : "12px 0"}`,
+    padding: `${props.imagePlaylist? "6px 10px" : "23px 18px"}`,
     transition: "all .3s", // Added transition for background-color
     cursor: "pointer",
     textDecoration: "none", // Remove default Link underline
-    transform: hovered ? "translateX(20px)" : "translateX(0)", // Background color changes when hovered
+    background: `${hovered && props.bg==null ? "var(--gray-bg)" : "transparent"}`, // Background color changes when hovered
   };
 
   const [{ token }, dispatch] = useDataLayerValue();
@@ -49,11 +49,7 @@ const MenuNavbar = (props) => {
             gap: "20px",
           }}
         >
-          <img
-            src={props.image}
-            alt="image playlist"
-            style={{ width: "60px", height: "60px" }}
-          />
+          <img src={props.image} alt="image playlist" style={{ width: "60px", height: "60px" }} />
           <p>{props.name}</p>{" "}
         </div>
       ) : (

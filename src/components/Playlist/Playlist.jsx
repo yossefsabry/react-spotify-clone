@@ -48,7 +48,7 @@ const Playlist = () => {
             <img src={playlist_info?.body?.images[0].url} alt="album" />
             <div className="playlist__info__content">
               <h2>PLAYLIST</h2>
-              <h1>{playlist_info.body?.name}</h1>
+              <h1>{playlist_info?.body?.name}</h1>
               <p>{playlist_info?.body?.description || "Lorem ipsum dolor sit amet, officia excepteur ex fugiat reprehenderit enim labore culpa sint ad nisi Lorem pariatur"}</p>
             </div>
           </div>

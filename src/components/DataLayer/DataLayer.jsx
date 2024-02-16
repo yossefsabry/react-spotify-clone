@@ -24,6 +24,8 @@ export const initialState = {
   recommend_list: null,
   playlist_user: null,
   playlist_id: null,
+  playlist_info: null,
+  loading: false,
 };
 
 export const reducerLayer = (state, action) => {
@@ -31,6 +33,10 @@ export const reducerLayer = (state, action) => {
   switch (action.type) {
     case "SET_USER":
       return { ...state, user: action.user };
+
+    case "SET_LOADING":
+      return { ...state, loading: action.loading };
+
     case "SET_TOKEN":
       return { ...state, token: action.token };
 

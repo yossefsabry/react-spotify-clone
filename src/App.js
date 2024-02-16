@@ -5,6 +5,7 @@ import Player from "./components/Player/Player";
 import SpotifyWebApi from "spotify-web-api-node";
 import { useDataLayerValue } from "./components/DataLayer/DataLayer";
 import { getTokenFromUrl } from "./spotify";
+import Loading from "./components/Loading/Loading";
 
 const s = new SpotifyWebApi();
 function App() {
@@ -48,16 +49,14 @@ function App() {
       });
       dispatch({
         type: "SET_LOADING",
-        loading: false,
+        loading: true,
       });
-
-      
     }
   }, [token, dispatch]);
 
    return(
       <>
-          {token ? <Player /> : <Login /> }
+          {token ?  <Player />  : <Login /> }
       </>
    )
 }

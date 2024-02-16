@@ -15,12 +15,12 @@ const Navbar = () => {
   return (
     <div className="navbar__container">
       <div className="menu__navbar__container" style={{ marginBottom: "10px" }}>
-        <MenuNavbar icon={<AddHomeWorkIcon />} name="Home" url="/" />
-        <MenuNavbar icon={<SearchIcon />} name="Search" />
+        <MenuNavbar icon={<AddHomeWorkIcon />} name="Home" url="/" bg={false} />
+        <MenuNavbar icon={<SearchIcon />} name="Search"  bg={false}/>
       </div>
       <div className="playlist__container">
         <div className="title__playlist">
-          <MenuNavbar icon={<VideoLibraryIcon />} name="Your Library" />
+          <MenuNavbar icon={<VideoLibraryIcon />} style={{background: "none !important"}} bg={false} name="Your Library" />
           <div className="icon__title" >
             <AddIcon />
             <ArrowForwardIcon />
