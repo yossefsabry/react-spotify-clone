@@ -4,6 +4,8 @@ import Navbar from "../Navbar/Navbar";
 import "./Player.css";
 import { Routes, Route } from "react-router-dom";
 import { useDataLayerValue } from "../DataLayer/DataLayer";
+import Playlist from "../Playlist/Playlist";
+import { Copyright } from "@mui/icons-material";
 
 const Player = () => {
 
@@ -16,8 +18,8 @@ const Player = () => {
         <Routes>
           <>
             <Route path="/" element={<Body name="Discover Weekly" type={discover_weekly}/>} />
-            {/* <Route path="/recommend" element={<Body name="Recommend List" type={recommend_list}/>} /> */}
             <Route path="/recommend" element={<BodyTwo name="Recommend List" type={recommend_list} />}/>
+            <Route path="/playlist" element={<Playlist />} />
           </>
         </Routes>
       </div>

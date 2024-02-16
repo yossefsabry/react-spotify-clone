@@ -22,6 +22,8 @@ export const initialState = {
   top_artists: null,
   spotify: null,
   recommend_list: null,
+  playlist_user: null,
+  playlist_id: null,
 };
 
 export const reducerLayer = (state, action) => {
@@ -43,6 +45,15 @@ export const reducerLayer = (state, action) => {
 
     case "GET_RECOMMEND":
       return { ...state, recommend_list: action.recommend_list };
+
+    case "SET_PLAYLIST_USER":
+      return { ...state, playlist_user: action.playlist_user };
+
+    case "SET_PLAYLIST_ID":
+      return { ...state, playlist_id: action.playlist_id };
+
+    case "SET_INFO_PLAYLIST":
+      return { ...state, playlist_info: action.playlist_info };
 
     default:
       return state;

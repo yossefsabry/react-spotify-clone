@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="playlist__content__container">
           {playlists
             ? playlists?.body?.items?.map((playlist) => (
-                <MenuNavbar key={playlist.id} name={playlist.name} imagePlaylist={true} image={playlist.images[0].url} />
+                <MenuNavbar key={playlist.id} id={playlist.id} name={playlist.name} imagePlaylist={true} image={playlist.images[0].url} url="/playlist" />
               ))
             : "no playlists"}
         </div>

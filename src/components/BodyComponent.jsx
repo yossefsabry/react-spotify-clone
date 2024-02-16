@@ -3,6 +3,10 @@ import SongRow from "./SongRow";
 import StopCircleIcon from "@mui/icons-material/StopCircle";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import SpotifyWebApi from "spotify-web-api-node";
+import { useDataLayerValue } from "./DataLayer/DataLayer";
+import { useEffect, useState } from "react";
+import Loading from "./Loading/Loading";
 
 const BodyComponent = ({ name, type }) => {
   return (
@@ -27,7 +31,7 @@ const BodyComponent = ({ name, type }) => {
             return <SongRow track={item.track} key={count} number={count} />;
           })}
         </div>
-      </div>
+      </div>)
     </>
   );
 };
@@ -35,8 +39,25 @@ const BodyComponent = ({ name, type }) => {
 export default BodyComponent;
 
 export const BodyComponentTwo = ({ name, type }) => {
+
+  const s = new SpotifyWebApi();
+  const [{ token }, dispatch] = useDataLayerValue();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+       s.setAccessToken(token);
+      s.getRecommendations({ min_energy: 0.4, seed_artists: ['2N72bJ8IYB4KZmKmxz5Xkk', '4DYFVNKZ1uixa6SQTvzQwJ'], min_popularity: 50 }).then((recommend_list) => {
+      setLoading(true);
+         dispatch({
+            type: "GET_RECOMMEND",
+            recommend_list: recommend_list,
+         });
+      });
+  }, [token, dispatch]);
+
   return (
     <>
+      {loading ? (
       <div style={{color: "white"}} className="container__recommend__list">
         <h1>Recommend list</h1>
         <div className="recommand__cards__wrapper">
@@ -55,6 +76,7 @@ export const BodyComponentTwo = ({ name, type }) => {
            })} 
         </div>
       </div>
+      ): (<Loading /> ) }
     </>
   );
 };

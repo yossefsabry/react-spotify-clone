@@ -6,8 +6,8 @@
   align-items: start;
   color: #fff;
   cursor: pointer;
-  gap: 20px;
   height: 100%;
+  gap: 20px;
   background: linear-gradient(transparent, var(--dark-green));
 }
 
