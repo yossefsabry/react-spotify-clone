@@ -5,7 +5,6 @@ import "./Player.css";
 import { Routes, Route } from "react-router-dom";
 import { useDataLayerValue } from "../DataLayer/DataLayer";
 import Playlist from "../Playlist/Playlist";
-import { Copyright } from "@mui/icons-material";
 
 const Player = () => {
 

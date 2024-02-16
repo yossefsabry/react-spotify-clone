@@ -31,7 +31,7 @@ const BodyComponent = ({ name, type }) => {
             return <SongRow track={item.track} key={count} number={count} />;
           })}
         </div>
-      </div>)
+      </div>
     </>
   );
 };
