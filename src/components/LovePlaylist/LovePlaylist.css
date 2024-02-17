@@ -1,0 +1,11 @@
+.love__playlist__container {
+  height: calc(100vh - var(--footer-height));
+  width: 100%;
+  color: white;
+  background-color: rgb(91, 87, 115);
+  flex: 0.8;
+  overflow-y: overlay;
+  background-color: var(--gray-bg);
+  margin: 10px ;
+  border-radius: 20px;
+}

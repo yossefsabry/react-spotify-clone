@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 import Login from "./components/Login/Login";
 import Player from "./components/Player/Player";
 import SpotifyWebApi from "spotify-web-api-node";
 import { useDataLayerValue } from "./components/DataLayer/DataLayer";
 import { getTokenFromUrl } from "./spotify";
-import Loading from "./components/Loading/Loading";
 
 const s = new SpotifyWebApi();
 function App() {
@@ -47,6 +46,7 @@ function App() {
           discover_weekly: response,
         });
       });
+
       dispatch({
         type: "SET_LOADING",
         loading: true,

@@ -11,7 +11,9 @@ const MenuNavbar = (props) => {
     alignItems: "center",
     gap: "0px 10px",
     color: "white",
-    padding: `${props.imagePlaylist? "6px 10px" : "23px 18px"}`,
+    padding: `${props.imagePlaylist? "6px 10px" : "20px 18px 15px"}`,
+    fontWeight: `${props.imagePlaylist? "" : "600"}`,
+    fontFamily: `${props.imagePlaylist? "" : "Helvetica"}`,
     transition: "all .3s", // Added transition for background-color
     cursor: "pointer",
     textDecoration: "none", // Remove default Link underline

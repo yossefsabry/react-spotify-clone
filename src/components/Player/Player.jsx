@@ -6,6 +6,8 @@ import { Routes, Route } from "react-router-dom";
 import { useDataLayerValue } from "../DataLayer/DataLayer";
 import Playlist from "../Playlist/Playlist";
 import Loading from "../Loading/Loading";
+import LovePlaylist from "../LovePlaylist/LovePlaylist";
+import RecommendPlaylist from "../RecommendPlaylist/RecommendPlaylist";
 
 const Player = () => {
   const [{ discover_weekly, recommend_list, loading }] = useDataLayerValue();
@@ -32,6 +34,8 @@ const Player = () => {
                   }
                 />
                 <Route path="/playlist" element={<Playlist />} />
+                <Route path="/topSong" element={<LovePlaylist />} />
+                <Route path="/recommend/playlist" element={<RecommendPlaylist />} />
               </>
             </Routes>
           </div>

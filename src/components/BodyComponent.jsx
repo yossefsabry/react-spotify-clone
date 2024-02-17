@@ -7,6 +7,7 @@ import SpotifyWebApi from "spotify-web-api-node";
 import { useDataLayerValue } from "./DataLayer/DataLayer";
 import { useEffect, useState } from "react";
 import Loading from "./Loading/Loading";
+import { Link } from "react-router-dom";
 
 const BodyComponent = ({ name, type }) => {
   return (
@@ -55,6 +56,13 @@ export const BodyComponentTwo = ({ name, type }) => {
       });
   }, [token, dispatch]);
 
+  const handleClick = (e) => {
+    console.log(e)
+    dispatch({
+      type: "SET_ID_RECOMMEND_PLAYLIST",
+      id_recommend_playlist: e
+    });
+  }
   return (
     <>
       {loading ? (
@@ -65,12 +73,12 @@ export const BodyComponentTwo = ({ name, type }) => {
              let count = index + 1 
              return ( 
                <> 
-                 <div key={count} className="card__recommend"> 
+                 <Link to={"/recommend/playlist"} key={count} className="card__recommend" onClick={() =>handleClick(item.album.id)}> 
                    <img src={item?.album?.images[0].url} alt="image card recommend" /> 
                     <p>{item.name}</p>
                     <p>artists: {item?.album.artists[0].name}</p> 
                     <p>count: {item.album.total_tracks}</p> 
-                 </div> 
+                 </Link> 
                </> 
              ); 
            })} 
