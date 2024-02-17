@@ -27,6 +27,8 @@ export const initialState = {
   playlist_info: null,
   loading: false,
   top_tracks: null,
+  id_recommend_playlist: null,
+  recommend_playlist: null,
 };
 
 export const reducerLayer = (state, action) => {
@@ -65,6 +67,11 @@ export const reducerLayer = (state, action) => {
     case "TOP_TRACKS":
       return { ...state, top_tracks: action.top_tracks };
 
+    case "SET_ID_RECOMMEND_PLAYLIST":
+      return { ...state, id_recommend_playlist: action.id_recommend_playlist };
+
+    case "SET_RECOMMEND_PlAYLIST":
+      return { ...state, recommend_playlist: action.recommend_playlist };
 
     default:
       return state;

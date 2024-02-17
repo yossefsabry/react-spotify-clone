@@ -14,7 +14,7 @@ const Header = (props) => {
     top: "0",
     padding: "25px 5px 25px 15px",
     transition: "all .3s", // not working for the change of the bg in header
-    background: props.scroll_state ? "linear-gradient( var(--dark-green), var(--gray-bg))" : "none",
+    background: props.scroll_state ? "linear-gradient( var(--dark-green), transparent" : "none",
   };
   const styleInputHeader = {
     color: 'white',
@@ -46,6 +46,7 @@ const Header = (props) => {
   const handleScroll = () => {
     console.log("welcome");
   }
+
   // handle scroll
   return (
     <div className='header__body' style={styleHeader} onScrollCapture={handleScroll} >
